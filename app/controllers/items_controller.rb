@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
 
 def welcome
     @items = Item.all
+    @categories = Category.all 
     respond_with(@items)
   end
 
@@ -47,6 +48,6 @@ def welcome
     end
 
     def item_params
-      params.require(:item).permit(:name, :description, :price, :stock)
+      params.require(:item).permit(:name, :description, :price, :stock, :category_id)
     end
 end

@@ -1,6 +1,29 @@
 <h1>Welcome, user!</h1>
 
-<% if !user_signed_in? %>
+<div class="row">
+  <div class="col-md-3">Categories
+
+<table>
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+  </div>
+
+<div class="col-md-9">
+
+ <% if !user_signed_in? %>
 <%= link_to( 'Register', new_user_session_path) %>
 <%end%>
 
@@ -18,3 +41,6 @@
     <% end %>
   </tbody>
 </table>
+
+</div>
+</div>
